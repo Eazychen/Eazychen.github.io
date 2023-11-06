@@ -100,9 +100,13 @@ a:visited {
 				box-shadow: 1px 1px 5px #000;
 				color: #d9d9d9;
 				h4 {
+					margin: auto;
+					width: 150px;
+					background-color: #000;
 					text-align: center;
 					padding: 10px;
 					font-size: 18px;
+					border-radius: 20px;
 				}
 				p {
 					font-size: 20px;
@@ -113,7 +117,9 @@ a:visited {
 			.person-intro-card:hover {
 				transform: translateY(-10px);
 				transition: 1s;
-				color: #fca311;
+				p {
+					color: #fca311;
+				}
 			}
 		}
 	}
