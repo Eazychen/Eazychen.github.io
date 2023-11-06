@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+.container .top {
+  width: 100%;
+  background-color: #353535;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .top h2 {
+  width: 300px;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+}
+.container .top .top-list {
+  width: 200px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+.container .top .top-list li i {
+  color: #e2e2e2;
+  padding: 5px;
+}
+.container .top .top-list li i:hover,
+.container .top .top-list li i:focus {
+  transform: scale(120%);
+  color: #acad94;
+}
+.container .main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #acad94;
+}
+.container .main .main-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px #000;
+  border: 2px solid #e2e2e2;
+  overflow-y: hidden;
+  -o-object-fit: fill;
+     object-fit: fill;
+  background-image: url(../img/S__29474820.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -20px;
+}
+.container .main .main-title {
+  padding: 20px 30px;
+  text-align: end;
+}
+.container .main .main-title div {
+  font-size: 24px;
+  font-weight: 500;
+  padding: 3px;
+}
+.container .main .main-title h3 {
+  font-size: 80px;
+}
+.container .person {
+  width: 100%;
+  background-color: #d9d9d9;
+}
+.container .person h3 {
+  text-align: center;
+  padding: 20px;
+  font-size: 46px;
+  letter-spacing: 10px;
+}
+.container .person .person-intro {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.container .person .person-intro .person-intro-card {
+  width: calc(20% - 40px);
+  padding: 10px;
+  background-color: #284b63;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px #000;
+  color: #d9d9d9;
+}
+.container .person .person-intro .person-intro-card h4 {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+}
+.container .person .person-intro .person-intro-card p {
+  font-size: 20px;
+  text-align: justify;
+  padding: 10px;
+}
+.container .person .person-intro .person-intro-card:hover {
+  transform: translateY(-10px);
+  transition: 1s;
+  color: #fca311;
+}/*# sourceMappingURL=index.css.map */
