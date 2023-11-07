@@ -75,12 +75,12 @@ a:visited {
   text-align: end;
 }
 .container .main .main-title div {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   padding: 3px;
 }
 .container .main .main-title h3 {
-  font-size: 80px;
+  font-size: 60px;
 }
 .container .person {
   width: 100%;
