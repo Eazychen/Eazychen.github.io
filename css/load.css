@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.piano-key {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.piano-key .text {
+  font-size: 40px;
+  margin-top: 80px;
+  width: 0px;
+  overflow: hidden;
+  animation: loading 4s 2s linear infinite;
+}
+.piano-key .piano-key-all {
+  width: 800px;
+  height: 400px;
+  border: 4px solid #000;
+  display: flex;
+}
+.piano-key .piano-key-all .piano-key-white {
+  width: 12.5%;
+  border-right: 6px solid #000;
+  border-bottom: 3px solid #000;
+  position: relative;
+  box-shadow: 2px 2px 10px #000;
+}
+.piano-key .piano-key-all .piano-key-white .piano-key-black {
+  width: 50px;
+  height: 70%;
+  box-shadow: 2px 2px 5px #000;
+  background-color: black;
+  border: #fff;
+  position: absolute;
+  left: -25px;
+}
+.piano-key .piano-key-all .piano-key-white-1 {
+  animation: pianokeycolor1 4s infinite;
+}
+.piano-key .piano-key-all .piano-key-white-2 {
+  animation: pianokeycolor2 3s 2s infinite;
+}
+.piano-key .piano-key-all .piano-key-white-3 {
+  animation: pianokeycolor3 5s 10s infinite;
+}
+.piano-key .piano-key-all .piano-key-white-4 {
+  animation: pianokeycolor4 4s 6s infinite;
+}
+.piano-key .piano-key-all .piano-key-white-5 {
+  animation: pianokeycolor5 3s 4s infinite;
+}
+.piano-key .piano-key-all .piano-key-white-6 {
+  animation: pianokeycolor2 3s 9s infinite;
+}
+.piano-key .piano-key-all .piano-key-white-7 {
+  animation: pianokeycolor3 2s 7s infinite;
+}
+.piano-key .piano-key-all .piano-key-white-8 {
+  animation: pianokeycolor4 2s 8s infinite;
+}
+
+@keyframes pianokeycolor1 {
+  50% {
+    background-image: linear-gradient(to top, #8d5a78 70%, white);
+  }
+  75% {
+    background-image: linear-gradient(to top, #a27cba 70%, white);
+  }
+  100% {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #000;
+  }
+}
+@keyframes pianokeycolor2 {
+  50% {
+    background-image: linear-gradient(to top, #6cb7da 70%, white);
+  }
+  75% {
+    background-image: linear-gradient(to top, #8cabd9 70%, white);
+  }
+  100% {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #000;
+  }
+}
+@keyframes pianokeycolor3 {
+  50% {
+    background-image: linear-gradient(to top, #f3cc4f 70%, white);
+  }
+  75% {
+    background-image: linear-gradient(to top, #f0ca50 70%, white);
+  }
+  100% {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #000;
+  }
+}
+@keyframes pianokeycolor4 {
+  50% {
+    background-image: linear-gradient(to top, #dc2227 70%, white);
+  }
+  75% {
+    background-image: linear-gradient(to top, #ef5950 70%, white);
+  }
+  100% {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #000;
+  }
+}
+@keyframes pianokeycolor5 {
+  50% {
+    background-image: linear-gradient(to top, #76a9a2 70%, white);
+  }
+  75% {
+    background-image: linear-gradient(to top, #86aa7d 70%, white);
+  }
+  100% {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #000;
+  }
+}
+@keyframes loading {
+  25% {
+    color: #6cb7da;
+    transform: rotate(90deg);
+  }
+  50% {
+    color: #a27cba;
+    transform: rotate(180deg);
+  }
+  75% {
+    color: #ef5950;
+    transform: rotate(240deg);
+  }
+  100% {
+    color: #f0ca50;
+    transform: rotate(360deg);
+    width: 188px;
+  }
+}/*# sourceMappingURL=load.css.map */

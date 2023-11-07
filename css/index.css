@@ -1,7 +1,9 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 li {
@@ -27,22 +29,23 @@ a:visited {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  opacity: 0.7;
 }
 .container .top h2 {
   width: 300px;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 32px;
   text-align: center;
 }
 .container .top .top-list {
   width: 200px;
   display: flex;
   padding: 10px;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .container .top .top-list li i {
   color: #e2e2e2;
-  padding: 5px;
+  padding: 10px;
 }
 .container .top .top-list li i:hover,
 .container .top .top-list li i:focus {
@@ -57,18 +60,19 @@ a:visited {
   background-color: #acad94;
 }
 .container .main .main-pic {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   box-shadow: 2px 2px 5px #000;
   border: 2px solid #e2e2e2;
   overflow-y: hidden;
   -o-object-fit: fill;
      object-fit: fill;
-  background-image: url(../img/S__29474820.jpg);
+  background-image: url(../img/大頭貼.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: -20px;
+  margin-top: 30px;
 }
 .container .main .main-title {
   padding: 20px 30px;
@@ -79,8 +83,12 @@ a:visited {
   font-weight: 500;
   padding: 3px;
 }
+.container .main .main-title div i {
+  padding: 2px;
+}
 .container .main .main-title h3 {
-  font-size: 60px;
+  font-size: 40px;
+  letter-spacing: 3px;
 }
 .container .person {
   width: 100%;
@@ -97,6 +105,10 @@ a:visited {
   padding: 20px;
   display: flex;
   justify-content: space-evenly;
+  align-items: flex-start;
+}
+.container .person .person-intro i {
+  padding-top: 20px;
 }
 .container .person .person-intro .person-intro-card {
   width: calc(20% - 40px);
@@ -108,7 +120,7 @@ a:visited {
 }
 .container .person .person-intro .person-intro-card h4 {
   margin: auto;
-  width: 150px;
+  width: 200px;
   background-color: #000;
   text-align: center;
   padding: 10px;
@@ -126,4 +138,77 @@ a:visited {
 }
 .container .person .person-intro .person-intro-card:hover p {
   color: #fca311;
+}
+.container .person .person-intro .person-intro-card:hover h4 {
+  background-color: #353535;
+  transform: translateY(-3px);
+}
+.container .project-all {
+  width: 100%;
+  background-color: #acad94;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px;
+}
+.container .project-all h3 {
+  text-align: center;
+  width: 100%;
+  font-size: 48px;
+}
+.container .project-all .project {
+  width: calc((100% - 60px) / 2);
+  padding: 20px;
+  background-color: #d9d9d9;
+  box-shadow: 1px 1px 2px #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-evenly;
+}
+.container .project-all .project .project-pic {
+  width: 400px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.container .project-all .project .project-pic img {
+  width: 100%;
+}
+.container .project-all .project a {
+  background-color: #000;
+  opacity: 0.8;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 24px;
+  color: #d9d9d9;
+  border-radius: 10px;
+  animation: move 1s infinite;
+}
+.container .project-all .project a:hover,
+.container .project-all .project a:focus {
+  color: #fca311;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }/*# sourceMappingURL=index.css.map */

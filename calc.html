@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>小算盤</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			.container {
+				width: 400px;
+				height: 400px;
+				background-color: blanchedalmond;
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				align-items: center;
+				padding: 10px;
+				border: 2px solid #000;
+			}
+			.type-number {
+				display: flex;
+				flex-direction: column;
+				margin: 10px 0px;
+				font-size: 24px;
+			}
+			.number {
+				width: 100px;
+				height: 60px;
+				margin-bottom: 10px;
+				font-size: 20px;
+				text-align: center;
+			}
+			.btn {
+				width: 50px;
+				height: 30px;
+				margin-bottom: 50px;
+				border: 2px solid #f00;
+				font-size: 18px;
+			}
+			.answer {
+				font-size: 32px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>小算盤</h2>
+			<div class="type-number">
+				<label for="number-1"
+					>數字
+					<input
+						type="number"
+						id="number-1"
+						class="number"
+						placeholder="請輸入數字"
+					/>
+				</label>
+				<label for="number-2"
+					>數字
+					<input
+						type="number"
+						id="number-2"
+						class="number"
+						placeholder="請輸入數字"
+					/>
+				</label>
+			</div>
+			<div class="all-btn">
+				<button class="btn btn-plus">+</button>
+				<button class="btn btn-minus">-</button>
+				<button class="btn btn-times">x</button>
+				<button class="btn btn-divided">/</button>
+			</div>
+			<div class="answer">
+				<h4 class="final-number">計算結果：</h4>
+			</div>
+
+			<script>
+				var numberOne = document.querySelector("#number-1");
+				var numberTwo = document.querySelector("#number-2");
+				var btnPlus = document.querySelector(".btn-plus");
+				var btnMinus = document.querySelector(".btn-minus");
+				var btnTimes = document.querySelector(".btn-times");
+				var btnDivided = document.querySelector(".btn-divided");
+				var finalNumber = document.querySelector(".final-number");
+
+				function add(one, two) {
+					var one = parseInt(numberOne.value);
+					var two = parseInt(numberTwo.value);
+					if (isNaN(parseInt(one)) || isNaN(parseInt(two))) {
+						alert("請輸入數字！");
+						return 0;
+					} else {
+						return one + two;
+					}
+				}
+				function minus(one, two) {
+					var one = parseInt(numberOne.value);
+					var two = parseInt(numberTwo.value);
+					if (isNaN(parseInt(one)) || isNaN(parseInt(two))) {
+						alert("請輸入數字！");
+						return 0;
+					} else {
+						return one - two;
+					}
+				}
+				function times(one, two) {
+					var one = parseInt(numberOne.value);
+					var two = parseInt(numberTwo.value);
+					if (isNaN(parseInt(one)) || isNaN(parseInt(two))) {
+						alert("請輸入數字！");
+						return 0;
+					} else {
+						return (one * two).toFixed(1);
+					}
+				}
+				function divided(one, two) {
+					var one = parseInt(numberOne.value);
+					var two = parseInt(numberTwo.value);
+					if (isNaN(parseInt(one)) || isNaN(parseInt(two))) {
+						alert("請輸入數字！");
+						return 0;
+					} else if (two === 0 || two < 0) {
+						alert("分母不能為0或負數");
+						return 0;
+					} else {
+						return (one / two).toFixed(1);
+					}
+				}
+
+				btnPlus.addEventListener("click", () => {
+					finalNumber.innerHTML = "計算結果：" + add();
+				});
+				btnMinus.addEventListener("click", () => {
+					finalNumber.innerHTML = "計算結果：" + minus();
+				});
+				btnTimes.addEventListener("click", () => {
+					finalNumber.innerHTML = "計算結果：" + times();
+				});
+				btnDivided.addEventListener("click", () => {
+					if (divided() === 0) {
+						finalNumber = "計算結果：";
+					} else {
+						finalNumber.innerHTML = "計算結果：" + divided();
+					}
+				});
+			</script>
+		</div>
+	</body>
+</html>
