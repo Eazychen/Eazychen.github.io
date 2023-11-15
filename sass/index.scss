@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 	font-family: "Noto Sans TC", sans-serif;
 }
+html {
+	scroll-behavior: smooth;
+}
 li {
 	list-style: none;
 }
@@ -202,6 +205,9 @@ a:visited {
 			margin: auto;
 			display: block;
 			padding: 5px;
+			&:hover {
+				color: #fca311;
+			}
 		}
 	}
 }
