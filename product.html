@@ -137,7 +137,6 @@
 						axios
 							.post("https://ec-course-api.hexschool.io/v2/api/user/check")
 							.then((res) => {
-								console.log("驗證成功");
 								this.getProduct();
 							})
 							.catch((err) => {
@@ -151,7 +150,6 @@
 								"https://ec-course-api.hexschool.io/v2/api/eazy/admin/products"
 							)
 							.then((res) => {
-								console.log(res);
 								this.products = res.data.products;
 							});
 					},
