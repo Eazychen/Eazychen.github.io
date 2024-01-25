@@ -72,6 +72,10 @@
 						</tr>
 					</tbody>
 				</table>
+				<pagination
+					:pages="pagination"
+					@change-page="getData"
+				></pagination>
 			</div>
 
 			<!-- Modal -->
@@ -286,6 +290,9 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- 刪除 -->
+
 			<div
 				id="delProductModal"
 				ref="delProductModal"
@@ -361,6 +368,7 @@
 						},
 						apiUrl: "https://ec-course-api.hexschool.io/v2",
 						apiPath: "eazy",
+						pagination: {},
 					};
 				},
 				methods: {
@@ -375,16 +383,18 @@
 								window.location = "index.html";
 							});
 					},
-					getData() {
+					getData(page = 1) {
+						const url = `${this.apiUrl}/api/${this.apiPath}/admin/products?page=${page}`;
 						axios
-							.get(
-								"https://ec-course-api.hexschool.io/v2/api/eazy/admin/products"
-							)
+							.get(url)
 							.then((res) => {
-								this.products = res.data.products;
+								const { products, pagination } = res.data;
+								this.products = products;
+								this.pagination = pagination;
 							})
 							.catch((err) => {
 								alert(err.data.message);
+								window.location = "index.html";
 							});
 					},
 					openModal(status, item) {
@@ -449,6 +459,57 @@
 						{ keyboard: false, backdrop: "static" }
 					);
 				},
+			});
+			app.component("pagination", {
+				props: ["pages"],
+				methods: {
+					changePage(num) {
+						this.$emit("change-page", num);
+					},
+				},
+				template: `	<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<li
+							class="page-item"
+							:class="{'disabled': pages.current_page === 1}"
+						>
+							<a
+								href="#"
+								class="page-link"
+								aria-label="Previous"
+								@click.prevent="changePage(pages.current_page - 1 )"
+							>
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li
+							v-for="(item, index) in pages.total_pages"
+							:key="index"
+							class="page-item"
+							:class="{'active': item === pages.current_page}"
+						>
+							<a
+								class="page-link"
+								href="#"
+								@click.prevent="changePage(item)"
+								>{{ item }}
+							</a>
+						</li>
+						<li
+							class="page-item"
+							:class="{'disabled': pages.current_page === 1}"
+						>
+							<a
+								href="#"
+								class="page-link"
+								aria-label="Previous"
+								@click.prevent="changePage(pages.current_page + 1 )"
+							>
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>`,
 			});
 			app.mount("#app");
 		</script>
